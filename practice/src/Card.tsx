@@ -1,8 +1,11 @@
+import ProfilePic from "./assets/cat.jpg"
 
 function sayHello() {
     return(
-        <div>
-            <p>hello world</p>
+        <div className="card">
+            <img src={ProfilePic} alt="profile-pic" className="cardImg"/>
+            <p>Hello</p>
+            <p>I'm Han studying in kyoto</p>
         </div>
     );
 }

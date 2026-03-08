@@ -1,9 +1,14 @@
 import Card from "./Card"
+import List from "./List";
 
 function App() {
   
   return(
-    <Card />
+    <>
+      <Card />
+      <Card />
+      <List />
+    </>
   );
 
 }

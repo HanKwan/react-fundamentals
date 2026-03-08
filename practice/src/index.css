@@ -1,4 +1,20 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: hsla(0, 0%, 0%, 0.021);
+}
+
+.card {
+  max-width: 200px;
+  background: white;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.cardImg {
+  max-width: 50%;
 }
