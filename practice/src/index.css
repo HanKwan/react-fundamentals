@@ -18,3 +18,23 @@ body {
 .cardImg {
   max-width: 50%;
 }
+
+.list-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.list-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.catagory {
+  margin: 0 auto;
+  color: white;
+  background-color: hsla(271, 71%, 59%, 0.55);
+  box-shadow: 4px 5px 15px rgba(0, 0, 0, 0.197);
+  border-radius: 20px;
+  padding: 15px;
+  max-width: 250px;
+}

@@ -17,6 +17,7 @@ function App() {
     <>
       <Card />
       <Card />
+      <br />
       <List items={fastFoods} catagory="Fast foods"/>
       <List items={drinks} catagory="Drinks"/>
     </>

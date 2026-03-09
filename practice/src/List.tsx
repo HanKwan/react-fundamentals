@@ -10,17 +10,20 @@ type ListProps = {
 
 function RanderingList({items, catagory}: ListProps) {
 
-    items.sort((a, b) => b.price - a.price)
+    const sortedList = items.sort((a, b) => b.price - a.price)
 
-    const listedFoods = items.map(food => <li key={food.id}>
+    const listedFoods = sortedList.map(food => <li key={food.id} className="list-items">
                             {food.name}: {food.price} yen
                         </li>)   
 
     return (
-        <ul>
-            <h2>{catagory}</h2>
-            {items.length > 0 && listedFoods}   {/* ture && 1 -> return 1 */} {/* ture && "string" -> return "string" */}
-        </ul>                                       
+        <div className="list-container">
+            <h2 className="catagory">{catagory}</h2>
+            <ul>
+                {listedFoods}
+                {/* items.length > 0 && listedFoods */}   {/* ture && 1 -> return 1 */} {/* ture && "string" -> return "string" */}
+            </ul>                                       
+        </div>
     )
 }
 
