@@ -1,5 +1,5 @@
-import Card from "./Card"
-import List from "./List";
+import Card from "./component/Card"
+import List from "./component/List";
 
 function App() {
   
@@ -17,7 +17,6 @@ function App() {
     <>
       <Card />
       <Card />
-      <br />
       <List items={fastFoods} catagory="Fast foods"/>
       <List items={drinks} catagory="Drinks"/>
     </>
