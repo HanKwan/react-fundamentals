@@ -42,9 +42,14 @@ body {
 }
 
 /* for Click.tsx */
-.click-cat {
+.click-cat img{
   width: 100px;
   cursor: pointer;
+  display: inline;
+}
+.click-cat p {
+  display: inline;
+  margin-left: 10px;
 }
 
 .counter {

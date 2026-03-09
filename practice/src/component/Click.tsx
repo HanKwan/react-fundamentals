@@ -6,12 +6,22 @@ function Click() {
 
     // hamburger eating cat
     const [isEating, setIsEating] = useState(false);
+    const [eatCount, setEatCount] = useState(0)
+    const [catText, setCatText] = useState("")
+
     const handleClick = () => {
         setIsEating(true)
 
         setTimeout(() => {
             setIsEating(false)
         }, 500);
+
+        if (eatCount >= 3) {
+            setCatText("Im full ~.~")
+        } else {
+            setEatCount(eatCount + 1)
+        }
+        setCatText(`I ate ${eatCount} hamburger/s`)
     }
 
     // counter using useStat
@@ -30,8 +40,11 @@ function Click() {
     return(
         <>
             {/* for click event */}
-            <img src={isEating ? EatCatPic : CatPic} alt="cat-pic" className="click-cat"
-            onClick={handleClick}></img>
+            <div className="click-cat">
+                <img src={isEating ? EatCatPic : CatPic} alt="cat-pic"
+                onClick={handleClick}></img>
+                <p>{catText}</p>
+            </div>
 
             {/* for counter using useStat */}
             <div className="counter">
