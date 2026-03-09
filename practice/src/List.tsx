@@ -10,7 +10,12 @@ type ListProps = {
 
 function RanderingList({items, catagory}: ListProps) {
 
-    const sortedList = items.sort((a, b) => b.price - a.price)
+    // instead of items.sort((a,b) => ...) which mutating props which should be read only
+    // instead make a copy with spead operator which creates new array
+    // dont use sort(), push(), pop(), splice(), reverse() if it came from props
+    // use [...array], array.slice(), array.map(), array.filter() instead
+    
+    const sortedList = [...items].sort((a, b) => b.price - a.price)
 
     const listedFoods = sortedList.map(food => <li key={food.id} className="list-items">
                             {food.name}: {food.price} yen
