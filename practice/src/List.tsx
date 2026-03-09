@@ -1,23 +1,25 @@
-function RanderingList() {
+type ListProps = {
+    items: {
+        id: number
+        name: string
+        price: number
+    }[]
+    catagory: string
+}
 
-    const fastFoods= [  {id: 1, name: "hamburger", price: 500}, 
-                        {id: 2, name: "pizza", price: 800}, 
-                        {id: 3, name: "cup noodle", price: 200}, 
-                        {id: 4, name: "fried chicken", price: 600}]   
 
-    // fastFoods.sort((a, b) => a.name.localeCompare(b.name)) // alphabetically
-    // fastFoods.sort((a, b) => b.price - a.price) // high to low price
-    // const expensivefastFoods = fastFoods.filter(fastFood => fastFood.price >= 500)
-    // expensivefastFoods.sort((a, b) => b.price - a.price)
+function RanderingList({items, catagory}: ListProps) {
 
-    const listedFoods = fastFoods.map(food => <li key={food.id}>
-                            {food.name}: ${food.price}
+    items.sort((a, b) => b.price - a.price)
+
+    const listedFoods = items.map(food => <li key={food.id}>
+                            {food.name}: {food.price} yen
                         </li>)   
 
     return (
         <ul>
-            <h2>Fast Foods</h2>
-            {fastFoods.length > 0 && listedFoods}   {/* ture && 1 -> return 1 */} {/* ture && "string" -> return "string" */}
+            <h2>{catagory}</h2>
+            {items.length > 0 && listedFoods}   {/* ture && 1 -> return 1 */} {/* ture && "string" -> return "string" */}
         </ul>                                       
     )
 }
