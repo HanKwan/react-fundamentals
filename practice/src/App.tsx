@@ -1,4 +1,5 @@
 import Card from "./component/Card"
+import Click from "./component/Click";
 import List from "./component/List";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Card />
       <List items={fastFoods} catagory="Fast foods"/>
       <List items={drinks} catagory="Drinks"/>
+      <Click />
     </>
   );
 

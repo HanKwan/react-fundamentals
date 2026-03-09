@@ -4,6 +4,7 @@ body {
   background-color: hsla(0, 0%, 0%, 0.021);
 }
 
+/* for Card.tsx */
 .card {
   max-width: 200px;
   background: white;
@@ -19,6 +20,7 @@ body {
   max-width: 50%;
 }
 
+/* for List.tsx */
 .list-container {
   text-align: center;
   margin-top: 30px;
@@ -37,4 +39,10 @@ body {
   border-radius: 20px;
   padding: 15px;
   max-width: 250px;
+}
+
+/* for Click.tsx */
+.click-cat {
+  width: 100px;
+  cursor: pointer;
 }
