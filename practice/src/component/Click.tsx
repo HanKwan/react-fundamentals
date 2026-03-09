@@ -16,12 +16,25 @@ function Click() {
             setIsEating(false)
         }, 500);
 
-        if (eatCount >= 3) {
-            setCatText("Im full ~.~")
-        } else {
-            setEatCount(eatCount + 1)
-        }
-        setCatText(`I ate ${eatCount} hamburger/s`)
+        setEatCount(prev => {
+            const newEatCount = prev + 1
+            
+            if (newEatCount >= 3) {
+                setCatText("Im full ~.~") 
+            } else {
+                setCatText(`I ate ${newEatCount} hamburger/s`)
+            }
+
+
+            return newEatCount
+        })
+
+        // if (eatCount >= 3) {
+        //     setCatText("Im full ~.~")
+        // } else {
+        //     setEatCount(eatCount + 1)
+        // }
+        // setCatText(`I ate ${eatCount} hamburger/s`)
     }
 
     // counter using useStat
