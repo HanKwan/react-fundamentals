@@ -7,7 +7,7 @@ function Click() {
     // hamburger eating cat
     const [isEating, setIsEating] = useState(false);
     const [eatCount, setEatCount] = useState(0)
-    const [catText, setCatText] = useState("")
+    // const [catText, setCatText] = useState("")
 
     const handleClick = () => {
         setIsEating(true)
@@ -16,19 +16,21 @@ function Click() {
             setIsEating(false)
         }, 500);
 
-        setEatCount(prev => {
-            const newEatCount = prev + 1
+        setEatCount(eatCount + 1)
+
+        //-> using prev as eatCount with condition (second try) <-
+        // setEatCount(prev => {
+        //     const newEatCount = prev + 1
             
-            if (newEatCount >= 3) {
-                setCatText("Im full ~.~") 
-            } else {
-                setCatText(`I ate ${newEatCount} hamburger/s`)
-            }
+        //     if (newEatCount >= 3) {
+        //         setCatText("Im full ~.~") 
+        //     } else {
+        //         setCatText(`I ate ${newEatCount} hamburger/s`)
+        //     }
+        //     return newEatCount
+        // })
 
-
-            return newEatCount
-        })
-
+        //-> first try <-
         // if (eatCount >= 3) {
         //     setCatText("Im full ~.~")
         // } else {
@@ -52,11 +54,11 @@ function Click() {
 
     return(
         <>
-            {/* for click event */}
+            {/* for eating cat */}
             <div className="click-cat">
                 <img src={isEating ? EatCatPic : CatPic} alt="cat-pic"
                 onClick={handleClick}></img>
-                <p>{catText}</p>
+                <p>{eatCount >= 3 ? "Im full ~.~" : `I ate ${eatCount} hamburger${eatCount <= 1 ? "" : "s"}`}</p>
             </div>
 
             {/* for counter using useStat */}
