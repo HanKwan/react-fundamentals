@@ -1,20 +1,18 @@
 import { useState } from "react"
-import CatPic from "../assets/cat.jpg"
+import EatCatPic from "../assets/cat-eat.png"
+import CatPic from "../assets/cat.png"
 
 function Click() {
 
-    // simple click event
-    let bur = 0
-    const handleClick = (food: string) => {
-        
-        if (bur >= 3) {
-            console.log("I'm full ~.~")
-        } else {
-            bur++
-            console.log(`I ate ${bur} ${food}/s`)
-        }
-    }
+    // hamburger eating cat
+    const [isEating, setIsEating] = useState(false);
+    const handleClick = () => {
+        setIsEating(true)
 
+        setTimeout(() => {
+            setIsEating(false)
+        }, 500);
+    }
 
     // counter using useStat
     const [count, setCount] = useState(0);
@@ -32,8 +30,8 @@ function Click() {
     return(
         <>
             {/* for click event */}
-            <img src={CatPic} alt="cat-pic" className="click-cat"
-            onClick={() => handleClick("hamburger")}></img>
+            <img src={isEating ? EatCatPic : CatPic} alt="cat-pic" className="click-cat"
+            onClick={handleClick}></img>
 
             {/* for counter using useStat */}
             <div className="counter">

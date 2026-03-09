@@ -1,4 +1,4 @@
-import ProfilePic from "../assets/cat.jpg"
+import ProfilePic from "../assets/cat.png"
 
 function sayHello() {
     return(
