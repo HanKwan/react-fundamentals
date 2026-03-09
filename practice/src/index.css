@@ -46,3 +46,24 @@ body {
   width: 100px;
   cursor: pointer;
 }
+
+.counter {
+  margin: 20px 30px;
+  width: 230px;
+  padding: 10px 20px;
+  background-color: hsla(195, 73%, 70%, 0.438);
+  border-radius: 15px;
+  text-align: center;
+}
+.counter div {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+.counter button {
+  font-size: 16px;
+  padding: 5px;
+  margin: 0 2px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.155);
+}
