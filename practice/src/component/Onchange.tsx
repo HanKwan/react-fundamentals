@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 function Onchange() {
     
-    const [name, setName] = useState("Guset")
+    const [name, setName] = useState("Guest")
     const [quantity, setQuantity] = useState(1)
     const [instruction, setInstruction] = useState("")
     const [payment, setPayment] = useState("")
@@ -30,28 +30,52 @@ function Onchange() {
                 <h3>Fill in the form</h3>
                 <div>
                     <label htmlFor="name">Enter name: </label>
-                    <input value={name} onChange={handleNameChange} type="text" />
+                    <input  value={name} 
+                            onChange={handleNameChange} 
+                            type="text" />
                 </div>
                 <div>
                     <label htmlFor="quantity">Quantity: </label>
-                    <input value={quantity} onChange={handleQuantityChange} type="number" />
+                    <input  
+                        value={quantity} 
+                        onChange={handleQuantityChange} 
+                        type="number" 
+                    />
                 </div>
                 <div>
                     <label htmlFor="instruction">Instruction: </label>
-                    <textarea value={instruction} onChange={handleInstructionChange} placeholder="Enter comment"/>
+                    <textarea   
+                        value={instruction} 
+                        onChange={handleInstructionChange} 
+                        placeholder="Enter comment"
+                    />
                 </div>
                 <select value={payment} onChange={handlePayment}>
                     <option value="">Select payment method</option>
                     <option value="Visa">Visa</option>
                 </select>
-                <div>
-                    <label><input type="radio" checked={shipping === "Pick up"} onChange={handleShippingChange} value="Pick up"/>Pick up</label>
+                <div className="radio-group">
+                    <label><input   
+                                type="radio"
+                                name="shipping"
+                                checked={shipping === "Pick up"} 
+                                onChange={handleShippingChange} 
+                                value="Pick up"
+                            />
+                            Pick up</label>
                     <br />
-                    <label><input type="radio" checked={shipping === "Delivery"} onChange={handleShippingChange} value="Delivery"/>Delievery</label>
+                    <label><input 
+                                type="radio" 
+                                name="shipping"
+                                checked={shipping === "Delievery"} 
+                                onChange={handleShippingChange} 
+                                value="Delievery"
+                            />
+                            Delievery</label>
                 </div>
             </div>
             <div className="comformation-form">
-                <h3>Comformation</h3>
+                <h3>Conformation</h3>
                 <p>Name: {name}</p>
                 <p>Quantity: {quantity}</p>
                 <p>Instruction: {instruction}</p>
