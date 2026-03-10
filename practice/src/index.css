@@ -70,5 +70,19 @@ body {
   margin: 0 2px;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.155);
+}
+
+/* for Onchange.tsx */
+.onchange-container {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+}
+
+.fill-in-form, .comformation-form{
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.155);
+  padding: 30px;
 }

@@ -30,7 +30,7 @@ function Click() {
         //     return newEatCount
         // })
 
-        //-> first try <-
+        //-> first try with text display for the eating cat<-
         // if (eatCount >= 3) {
         //     setCatText("Im full ~.~")
         // } else {

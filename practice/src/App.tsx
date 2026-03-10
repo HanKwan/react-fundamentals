@@ -1,6 +1,7 @@
 import Card from "./component/Card"
 import Click from "./component/Click";
 import List from "./component/List";
+import Onchange from "./component/Onchange";
 
 function App() {
   
@@ -21,6 +22,7 @@ function App() {
       <List items={fastFoods} catagory="Fast foods"/>
       <List items={drinks} catagory="Drinks"/>
       <Click />
+      <Onchange />
     </>
   );
 
