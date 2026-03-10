@@ -53,6 +53,9 @@ function Onchange() {
                 <select value={payment} onChange={handlePayment}>
                     <option value="">Select payment method</option>
                     <option value="Visa">Visa</option>
+                    <option value="MasterCard">MasterCard</option>
+                    <option value="Konbini Pay">Konbini Pay</option>
+                    <option value="PayPay">PayPay</option>
                 </select>
                 <div className="radio-group">
                     <label><input   
