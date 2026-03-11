@@ -2,6 +2,7 @@ import Card from "./component/Card"
 import Click from "./component/Click";
 import List from "./component/List";
 import Onchange from "./component/Onchange";
+import ToBuyList from "./component/ToBuyList";
 
 function App() {
   
@@ -23,6 +24,7 @@ function App() {
       <List items={drinks} catagory="Drinks"/>
       <Click />
       <Onchange />
+      <ToBuyList />
     </>
   );
 
