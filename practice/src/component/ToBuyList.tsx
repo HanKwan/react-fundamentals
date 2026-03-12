@@ -31,6 +31,10 @@ function ToDoList() {
         setProductQuantity(1)
     }
 
+    const handleRemoveProduct = (id: number) => {
+        setProducts(p => p.filter(product => product.id !== id))
+    }
+
     // const handleInputProduct = (e: React.ChangeEvent<HTMLInputElement>) => {
     //     setNewProductName(e.target.value)   // this make display change when enter in input
     // }
@@ -74,7 +78,7 @@ function ToDoList() {
             <ul className="shopping-list">
                 {products.map(product => (
                     <li key={product.id}>
-                        <input type="checkbox" />
+                        <input type="checkbox" onClick={() => handleRemoveProduct(product.id)}/>
                         <span className="product-name">{product.name}</span>
                         <span>x{product.quantity}</span>
                         <span className="price">
