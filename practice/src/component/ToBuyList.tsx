@@ -44,32 +44,46 @@ function ToDoList() {
     return(
         <div className="to-buy-list-container">
             <h2>Shopping List</h2>
-            <input  type="text"
+
+            <div className="input-section">
+                <input
+                    type="text"
                     value={newProductName}
                     onChange={(e) => setNewProductName(e.target.value)}
                     placeholder="Enter the item name..."
-            /> <br />
-            <input  type="number" 
+                />
+
+                <input
+                    type="number"
                     min="0"
                     value={productPrice}
                     onChange={(e) => setProductPrice(e.target.value)}
-                    placeholder="Enter the item's price..."
-            /> <br />
-            <input  type="number"
-                    min="1" 
+                    placeholder="Price"
+                />
+
+                <input
+                    type="number"
+                    min="1"
                     value={productQuantity}
                     onChange={(e) => setProductQuantity(Number(e.target.value))}
-            />
-            <button onClick={handleAddProduct}>Add</button>
+                />
 
-            <div className="shopping-list">
-                <ul>
-                    {products.map(product => (
-                        <li key={product.id}>{product.name} x {product.quantity}: {product.price * product.quantity}yen</li>
-                    ))}
-                </ul>
+                <button onClick={handleAddProduct}>Add</button>
             </div>
-        </div>
+
+            <ul className="shopping-list">
+                {products.map(product => (
+                    <li key={product.id}>
+                        <input type="checkbox" />
+                        <span className="product-name">{product.name}</span>
+                        <span>x{product.quantity}</span>
+                        <span className="price">
+                        {product.price * product.quantity} yen
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            </div>
     )
 }
 

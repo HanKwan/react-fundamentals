@@ -126,3 +126,65 @@ textarea{
     align-items: center;
     gap: 5px;
 }
+
+/* for toBuyList */
+.to-buy-list-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  border-radius: 10px;
+  font-family: sans-serif;
+  border: 1px solid hsla(0, 0%, 0%, 0.141);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.input-section input {
+  padding: 6px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid hsla(0, 0%, 0%, 0.526);
+}
+.shopping-list li input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.input-section button {
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: hsla(120, 61%, 37%, 0.745);
+  border: 1px solid hsla(0, 0%, 0%, 0.526);
+  transition: background-color 0.25s ease;
+  color: white;
+}
+.input-section button:hover {
+  background-color: hsla(120, 70%, 29%, 0.745);
+}
+
+.shopping-list {
+  list-style: none;
+  padding: 0;
+}
+
+.shopping-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-name {
+  flex: 1;
+}
+
+.price {
+  font-weight: bold;
+}
