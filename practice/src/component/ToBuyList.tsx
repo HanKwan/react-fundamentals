@@ -83,7 +83,8 @@ function ToDoList() {
                     </li>
                 ))}
             </ul>
-            </div>
+            <div className="totalAmount">Total: {products.reduce((sum, product) => sum + product.price * product.quantity, 0)}</div>
+        </div>
     )
 }
 

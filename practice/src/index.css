@@ -188,3 +188,8 @@ textarea{
 .price {
   font-weight: bold;
 }
+
+.totalAmount {
+  text-align: right;
+  font-weight: bold;
+}
