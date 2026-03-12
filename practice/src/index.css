@@ -102,7 +102,7 @@ label{
     margin-bottom: 4px;
 }
 
-input[type="text"],
+.onchange-container input[type="text"],
 input[type="number"],
 textarea,
 select{
