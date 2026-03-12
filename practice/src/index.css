@@ -103,7 +103,7 @@ label{
 }
 
 .onchange-container input[type="text"],
-input[type="number"],
+.onchange-container input[type="number"],
 textarea,
 select{
     width: 90%;

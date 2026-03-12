@@ -3,29 +3,38 @@ import React, { useState } from "react"
 type Product = {
             id: number
             name: string
+            price: number
+            quantity: number
         }
 
 function ToDoList() {
     
     const [products, setProducts] = useState<Product[]>([])
-    const [productName, setProductName] = useState("")
+    // const [productName, setProductName] = useState("")
     const [newProductName, setNewProductName] = useState("")
-    const [productPrice, setProductPrice] = useState(0)
+    const [productPrice, setProductPrice] = useState("")
     const [productQuantity, setProductQuantity] = useState(1)
 
     const handleAddProduct = () => {
 
-        const newProduct: Product = {id: Date.now(), name: newProductName}
+        const newProduct: Product = {id: Date.now(), 
+                                    name: newProductName,
+                                    price: Number(productPrice),
+                                    quantity: Number(productQuantity)}
         setProducts(p => [...p, newProduct])
+
+        setNewProductName("")
+        setProductPrice("")
+        setProductQuantity(1)
     }
     const handleInputProduct = (e: React.ChangeEvent<HTMLInputElement>) => {
         setNewProductName(e.target.value)   // this make display change when enter in input
     }
-    const handleProductPrice = () => {
-
+    const handleProductPrice = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setProductPrice(e.target.value)
     }
-    const handleProductQuantity = () => {
-
+    const handleProductQuantity = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setProductQuantity(Number(e.target.value))
     }
 
     return(
@@ -35,13 +44,22 @@ function ToDoList() {
                     value={newProductName}
                     onChange={handleInputProduct}
                     placeholder="Enter the item name..."
+            /> <br />
+            <input  type="number" 
+                    value={productPrice}
+                    onChange={handleProductPrice}
+                    placeholder="Enter the item's price..."
+            /> <br />
+            <input  type="number" 
+                    value={productQuantity}
+                    onChange={handleProductQuantity}
             />
             <button onClick={handleAddProduct}>Add</button>
 
             <div className="shopping-list">
                 <ul>
                     {products.map(product => (
-                        <li key={product.id}>{product.name}</li>
+                        <li key={product.id}>{product.name} x {product.quantity}: {product.price * product.quantity}yen</li>
                     ))}
                 </ul>
             </div>
