@@ -16,6 +16,8 @@ function ToDoList() {
 
     const handleAddProduct = () => {
 
+        if (!newProductName || Number(productPrice) <= 0) return
+
         const newProduct: Product = {
             id: Date.now(), 
             name: newProductName,
@@ -48,11 +50,13 @@ function ToDoList() {
                     placeholder="Enter the item name..."
             /> <br />
             <input  type="number" 
+                    min="0"
                     value={productPrice}
                     onChange={(e) => setProductPrice(e.target.value)}
                     placeholder="Enter the item's price..."
             /> <br />
-            <input  type="number" 
+            <input  type="number"
+                    min="1" 
                     value={productQuantity}
                     onChange={(e) => setProductQuantity(Number(e.target.value))}
             />
