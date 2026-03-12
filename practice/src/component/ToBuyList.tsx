@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 
 type Product = {
             id: number
@@ -10,49 +10,51 @@ type Product = {
 function ToDoList() {
     
     const [products, setProducts] = useState<Product[]>([])
-    // const [productName, setProductName] = useState("")
     const [newProductName, setNewProductName] = useState("")
     const [productPrice, setProductPrice] = useState("")
     const [productQuantity, setProductQuantity] = useState(1)
 
     const handleAddProduct = () => {
 
-        const newProduct: Product = {id: Date.now(), 
-                                    name: newProductName,
-                                    price: Number(productPrice),
-                                    quantity: Number(productQuantity)}
+        const newProduct: Product = {
+            id: Date.now(), 
+            name: newProductName,
+            price: Number(productPrice),
+            quantity: productQuantity
+        }
         setProducts(p => [...p, newProduct])
 
         setNewProductName("")
         setProductPrice("")
         setProductQuantity(1)
     }
-    const handleInputProduct = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setNewProductName(e.target.value)   // this make display change when enter in input
-    }
-    const handleProductPrice = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setProductPrice(e.target.value)
-    }
-    const handleProductQuantity = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setProductQuantity(Number(e.target.value))
-    }
+
+    // const handleInputProduct = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     setNewProductName(e.target.value)   // this make display change when enter in input
+    // }
+    // const handleProductPrice = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     setProductPrice(Number(e.target.value))
+    // }
+    // const handleProductQuantity = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     setProductQuantity(Number(e.target.value))
+    // }
 
     return(
         <div className="to-buy-list-container">
             <h2>Shopping List</h2>
             <input  type="text"
                     value={newProductName}
-                    onChange={handleInputProduct}
+                    onChange={(e) => setNewProductName(e.target.value)}
                     placeholder="Enter the item name..."
             /> <br />
             <input  type="number" 
                     value={productPrice}
-                    onChange={handleProductPrice}
+                    onChange={(e) => setProductPrice(e.target.value)}
                     placeholder="Enter the item's price..."
             /> <br />
             <input  type="number" 
                     value={productQuantity}
-                    onChange={handleProductQuantity}
+                    onChange={(e) => setProductQuantity(Number(e.target.value))}
             />
             <button onClick={handleAddProduct}>Add</button>
 
