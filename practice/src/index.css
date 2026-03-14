@@ -196,12 +196,13 @@ textarea{
 
 /* for digital clock */
 .digital-clock {
-  background-color: hsla(180, 89%, 66%, 0.774);
+  background-color: #8B9A5B;
+  font-weight: bold;
   width: 250px;
   font-family: monospace;
   padding: 30px;
   border-radius: 20px;
-  border: 20px solid rgb(246, 230, 139);
+  border: 20px solid hsla(215, 90%, 65%, 0.744);
   font-size: 2.5rem;
   text-align: center;
 }

@@ -21,7 +21,7 @@ function DigitalClock() {
 
         const amOrPm = hours >= 12 ? "PM" : "AM"
 
-        hours % 12 || 12
+        hours = hours % 12 || 12
         const formattedHours = hours.toString().padStart(2, "0")
 
         return `${formattedHours}:${minutes}:${seconds} ${amOrPm}`
