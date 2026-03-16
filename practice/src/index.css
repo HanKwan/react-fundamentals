@@ -250,3 +250,75 @@ textarea{
 .stop-watch .stop-watch-btn .resetBtn {
   background-color: hsla(280, 83%, 62%, 0.667);
 }
+
+/* for timer */
+.timer {
+  width: 350px;
+  background-color: hsl(59, 78%, 66%);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/* main layout */
+.timer-layout {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* left column */
+.input-time {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* input */
+.input-time input {
+  padding: 8px;
+  width: 80px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.386);
+  font-family: monospace;
+  font-size: 1.2rem;
+  text-align: center;
+  background: #eee;
+}
+
+/* button */
+.input-time button {
+  padding: 7px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.1rem;
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 3px 0 #2e7d32;
+  transition: all 0.1s;
+}
+
+.input-time button:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 #2e7d32;
+}
+
+/* timer display */
+.timer-display {
+  flex: 1;
+  background: #8B9A5B;
+  padding: 15px 20px;
+  border-radius: 25px;
+  font-size: 3rem;
+  font-family: "JetBrains Mono", monospace;
+  text-align: center;
+  color: rgb(10, 10, 10);
+}
+
+/* message */
+.msg {
+  margin-top: 15px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.3rem;
+  text-align: center;
+}
