@@ -231,7 +231,7 @@ textarea{
   border: none;
   box-shadow: 0 3px 0x rgba(0, 0, 0, 0.197);
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all 0.05s ease;
 }
 .stop-watch .stop-watch-btn button:hover {
   transform: translateY(-3px);
