@@ -3,6 +3,7 @@ import Click from "./component/Click";
 import DigitalClock from "./component/DigitalClock";
 import List from "./component/List";
 import Onchange from "./component/Onchange";
+import StopWatch from "./component/StopWatch";
 import ToBuyList from "./component/ToBuyList";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Onchange />
       <ToBuyList />
       <DigitalClock />
+      <StopWatch />
     </>
   );
 
