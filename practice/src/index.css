@@ -291,11 +291,21 @@ textarea{
   border-radius: 12px;
   border: none;
   font-size: 1.1rem;
-  background: #4CAF50;
   color: white;
   cursor: pointer;
-  box-shadow: 0 3px 0 #2e7d32;
   transition: all 0.1s;
+}
+.input-time .startBtn {
+  background: #4CAF50;
+  box-shadow: 0 3px 0 #2e7d32;
+}
+.input-time .stopBtn {
+  background: #af614c;
+  box-shadow: 0 3px 0 #7d2e2e;
+}
+.input-time .resetBtn {
+  background: #4c4caf;
+  box-shadow: 0 3px 0 #392e7d;
 }
 
 .input-time button:active {
@@ -307,9 +317,9 @@ textarea{
 .timer-display {
   flex: 1;
   background: #8B9A5B;
-  padding: 15px 20px;
+  padding: 48px 20px;
   border-radius: 25px;
-  font-size: 3rem;
+  font-size: 4rem;
   font-family: "JetBrains Mono", monospace;
   text-align: center;
   color: rgb(10, 10, 10);
