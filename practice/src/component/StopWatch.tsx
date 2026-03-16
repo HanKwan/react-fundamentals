@@ -10,10 +10,7 @@ function StopWatch() {
     useEffect(() => {
         if (isRunning) {
             intervalIdRef.current = setInterval(() => {
-                if (startTimeRef.current !== null) {    // prevent subtracting if startTimeRef is null
-                    setElapsedTime(Date.now() - startTimeRef.current)
-                    console.log(elapsedTime)
-                }
+                setElapsedTime(Date.now() - startTimeRef.current)
             }, 100);
         }
 
@@ -22,12 +19,11 @@ function StopWatch() {
                 clearInterval(intervalIdRef.current)
             }
         }
-    }, [])
+    }, [isRunning])     // missing dependency wont run
 
     const start = () => {
         setIsRunning(true)
         startTimeRef.current = Date.now() - elapsedTime
-        console.log(startTimeRef.current)
     }
     const stop = () => {
         setIsRunning(false)
