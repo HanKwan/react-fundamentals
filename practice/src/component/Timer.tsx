@@ -1,13 +1,23 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 function Timer() {
     
     const [isRunning, setIsRunning] = useState(false)
-    const [endTime, setEndTime] = useState(0)
-    
+    const [remainingTime, setRemainingTime] = useState(0)
+    const endTimeRef = useRef(null);
+    const intervalIdRef = useRef(null)
+
     const handleStart = () => {
         
-    } 
+    }
+    const handleStop = () => {
+        setIsRunning(false)
+    }
+    const handleReset = () => {
+        setIsRunning(false)
+        setRemainingTime(0)
+        endTimeRef.current = null
+    }
 
 
     return(
