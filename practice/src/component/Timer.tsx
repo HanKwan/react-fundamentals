@@ -42,6 +42,7 @@ function Timer() {
 
         endTimeRef.current = Date.now() + duration
         setRemainingTime(duration)
+        setInputMinutes(0)
         setIsRunning(true)
     }
     const handleStop = () => {
@@ -61,8 +62,8 @@ function Timer() {
     }
 
     const format = () => {
-        let minutes = Math.floor(remainingTime / (1000 * 60))
-        let seconds = Math.floor(remainingTime / 1000 % 60)
+        let minutes = Math.floor(remainingTime / (1000 * 60)).toString().padStart(2, "0")
+        let seconds = Math.floor(remainingTime / 1000 % 60).toString().padStart(2, "0")
 
         return `${minutes}:${seconds}`
     }
