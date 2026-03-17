@@ -10,6 +10,8 @@ function Timer() {
 
     useEffect(() => {
             intervalIdRef.current = setInterval(() => {
+                if (!isRunning) return
+
                 if (endTimeRef.current) {
                     const timeLeft = endTimeRef.current - Date.now()
                     
@@ -36,16 +38,20 @@ function Timer() {
     }, [isRunning])
 
     const handleStart = () => {
-        const duration = inputMinutes * 1000 * 60
+        const duration = remainingTime > 0 ? remainingTime : inputMinutes * 1000 * 60
+
         endTimeRef.current = Date.now() + duration
-        console.log(duration)
         setRemainingTime(duration)
         setIsRunning(true)
     }
     const handleStop = () => {
         setIsRunning(false)
+
         if (intervalIdRef.current) {
             clearInterval(intervalIdRef.current)
+        }
+        if (endTimeRef.current) {
+            setRemainingTime(endTimeRef.current - Date.now())
         }
     }
     const handleReset = () => {
@@ -66,7 +72,7 @@ function Timer() {
             <div className="timer-layout">   
                 <div className="input-time">
                     <input type="number" value={inputMinutes} onChange={(e) => setInputMinutes(Number(e.target.value))}/>
-                    <button className="startBtn" onClick={handleStart}>Start</button>
+                    <button className="startBtn" onClick={handleStart}>{endTimeRef.current ? "Resume" : "Start"}</button>
                     <button className="stopBtn" onClick={handleStop}>Stop</button>
                     <button className="resetBtn" onClick={handleReset}>Reset</button>
                 </div>
