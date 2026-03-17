@@ -11,9 +11,9 @@ function Timer() {
     useEffect(() => {
             intervalIdRef.current = setInterval(() => {
                 if (endTimeRef.current) {
-                    setRemainingTime(endTimeRef.current - Date.now())
+                    const timeLeft = endTimeRef.current - Date.now()
                     
-                    if (remainingTime <= 0) {
+                    if (timeLeft <= 0) {
                         setIsRunning(false)
                         setRemainingTime(0)
                         endTimeRef.current = null
@@ -21,6 +21,8 @@ function Timer() {
                         if (intervalIdRef.current) {
                             clearInterval(intervalIdRef.current)
                         }
+                    } else {
+                        setRemainingTime(timeLeft)
                     }
                 }
             }, 1000);
@@ -70,7 +72,7 @@ function Timer() {
                 </div>
                 <div className="timer-display">{format()}</div>
             </div>
-            <div className="msg">Your time is up!</div>
+            <div className="msg">{remainingTime <= 0 ? "Beep beep! Your time is up!": ""}</div>
         </div>
     )
 }
