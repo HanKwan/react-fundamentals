@@ -12,8 +12,18 @@ function Timer() {
             intervalIdRef.current = setInterval(() => {
                 if (endTimeRef.current) {
                     setRemainingTime(endTimeRef.current - Date.now())
+                    
+                    if (remainingTime <= 0) {
+                        setIsRunning(false)
+                        setRemainingTime(0)
+                        endTimeRef.current = null
+
+                        if (intervalIdRef.current) {
+                            clearInterval(intervalIdRef.current)
+                        }
+                    }
                 }
-            }, 100);
+            }, 1000);
 
             return () => {
                 if (intervalIdRef.current) {
@@ -32,6 +42,9 @@ function Timer() {
     }
     const handleStop = () => {
         setIsRunning(false)
+        if (intervalIdRef.current) {
+            clearInterval(intervalIdRef.current)
+        }
     }
     const handleReset = () => {
         setIsRunning(false)
